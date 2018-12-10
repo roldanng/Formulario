@@ -11,7 +11,16 @@ export class FormService {
 
   constructor() {
     
-    this.usuarios = [];
+    this.usuarios = [
+      {
+        id: 0,
+        nombre: 'Roldan',
+        apellidoP: 'Nieto',
+        apellidoM: 'Gonzalez',
+        correo: 'roldannieto@roldan.com',
+        contrasenia: ''
+      }
+    ];
   }
 
 
@@ -27,7 +36,8 @@ export class FormService {
     return {
       id: this.usuarios.length,
       nombre: '',
-      apellidos: '',
+      apellidoP: '',
+      apellidoM: '',
       correo: '',
       contrasenia: ''
     };
