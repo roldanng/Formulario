@@ -1,0 +1,20 @@
+<h2>Registro</h2>
+<p>
+  <span>Nombre:</span>
+  <input type="text" [(ngModel)]="usuario.nombre">
+</p>
+<p>
+  <span>Apellidos:</span>
+  <input type="text" [(ngModel)]="usuario.apellidos">
+</p>
+<p>
+  <span>Correo:</span>
+  <input type="text" [(ngModel)]="usuario.correo">
+</p>
+<p>
+  <span>Contraseña:</span>
+  <input type="text" [(ngModel)]="usuario.contrasenia">
+</p>
+<p>
+  <button (click)="this.nuevoUsuario()">Guardar</button>
+</p>
