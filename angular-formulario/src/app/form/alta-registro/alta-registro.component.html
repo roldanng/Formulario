@@ -1,24 +1,40 @@
 <h2>Registro</h2>
+
+<form>
 <p>
-  <span>Nombre:</span>
-  <input type="text" [(ngModel)]="usuario.nombre">
+  <span >Nombre:</span>
+  <input id="nombre" name="nombre" type="text" [(ngModel)]="usuario.nombre"  #nombre="ngModel" required>
 </p>
+<div [hidden]="nombre.valid || nombre.pristine" >El Nombre es requerido </div>
+
 <p>
   <span>Apellido Paterno:</span>
-  <input type="text" [(ngModel)]="usuario.apellidoP">
+  <input type="text" id="apellidop" name="apellidop" [(ngModel)]="usuario.apellidoP" #apellidop="ngModel" required>
 </p>
+<div [hidden]="apellidop.valid || apellidop.pristine" >El apellido paterno es requerido </div>
+
 <p>
   <span>Apellido Materno:</span>
-  <input type="text" [(ngModel)]="usuario.apellidoM">
+  <input type="text" id="apellidom" name="apellidom" [(ngModel)]="usuario.apellidoM" #apellidom="ngModel" required>
 </p>
+<div [hidden]="apellidom.valid || apellidom.pristine" >El apellido materno es requerido </div>
+
 <p>
-  <span>Correo:</span>
-  <input type="text" [(ngModel)]="usuario.correo">
+  <span>Correo electronico:</span>
+  <input type="email"id="correo" name="coreo" [(ngModel)]="usuario.correo" #correo="ngModel" required>
 </p>
+<div [hidden]="correo.valid || correo.pristine" >El correo electronico es requerido </div>
 <p>
   <span>Contraseña:</span>
-  <input type="text" [(ngModel)]="usuario.contrasenia">
+  <input type="password"id="contrasenia" name="contrasenia" [(ngModel)]="usuario.contrasenia" #contrasenia="ngModel" required>
 </p>
+<div [hidden]="contrasenia.valid || contrasenia.pristine" >El contraseña es requerido </div>
+
 <p>
-  <button (click)="this.nuevoUsuario()">Guardar</button>
+  <button  type="submit"  [disabled]="!nombre.valid || !apellidop.valid || !apellidom.valid || !correo.valid || !contrasenia.valid" (click)="this.nuevoUsuario(!nombre.valid || !apellidop.valid || !apellidom.valid || !correo.valid || !contrasenia.valid)">Guardar</button>
 </p>
+
+</form>
+
+
+

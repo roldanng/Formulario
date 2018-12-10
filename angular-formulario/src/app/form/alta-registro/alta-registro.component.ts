@@ -10,7 +10,7 @@ import { Usuario } from './../form.model';
 export class AltaRegistroComponent implements OnInit {
 
   usuario: Usuario;
-  
+  success = true;
 
   constructor( private formService: FormService ) { }
 
@@ -18,9 +18,12 @@ export class AltaRegistroComponent implements OnInit {
     this.usuario = this.formService.nuevoUsuario();
   }
 
-  nuevoUsuario(): void {
-    this.formService.agregarUsuario(this.usuario);
-    this.usuario = this.formService.nuevoUsuario();
+  nuevoUsuario(f): void {
+    if (!f) {
+      this.formService.agregarUsuario(this.usuario);
+      this.usuario = this.formService.nuevoUsuario();
+    }
+    
   }
 
 }

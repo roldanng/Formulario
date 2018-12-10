@@ -17,7 +17,7 @@ export class FormService {
         nombre: 'Roldan',
         apellidoP: 'Nieto',
         apellidoM: 'Gonzalez',
-        correo: 'roldannieto@roldan.com',
+        correo: 'rolitho@msn.com',
         contrasenia: ''
       }
     ];
